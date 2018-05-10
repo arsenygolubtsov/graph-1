@@ -9,17 +9,17 @@ TEST_CASE("num0")
     graph.dfs(0);
     ostringstream stream;
     graph.print_result(stream);
-    string out = "0 1 2 3 4 5 6 ";
+    string out = "->0->1->2->3->4->5->6";
     REQUIRE(out == stream.str());
 }
 
 TEST_CASE("num2")
 {
     Graph graph({ { 1, 2, 6 }, { 0, 2, 3 }, { 0, 1 }, { 1, 4 }, { 3, 5 }, { 4, 6 }, { 0, 5 } });
-    graph.dfs(1);
+    graph.dfs(2);
     ostringstream stream;
     graph.print_result(stream);
-    string out = "2 0 1 3 4 5 6 ";
+    string out = "->2->0->1->3->4->5->6";
     REQUIRE(out == stream.str());
 }
 
@@ -29,7 +29,7 @@ TEST_CASE("num4")
     graph.dfs(4);
     ostringstream stream;
     graph.print_result(stream);
-    string out = "4 3 1 0 2 6 5 ";
+    string out = "->4->3->1->0->2->6->5";
     REQUIRE(out == stream.str());
 }
 
@@ -40,7 +40,7 @@ TEST_CASE("constructor_1")
     Graph graph(graph_1);
     ostringstream stream;
     graph.print_result(stream);
-    string out = "0 1 2 3 4 5 6 ";
+    string out = "->0->1->2->3->4->5->6";
     REQUIRE(out == stream.str());
 }
 
@@ -52,7 +52,7 @@ TEST_CASE("construktor_2")
     graph = graph_1;
     ostringstream stream;
     graph.print_result(stream);
-    string out = "0 1 2 3 4 5 6 ";
+    string out = "->0->1->2->3->4->5->6";
     REQUIRE(out == stream.str());
 }
 
