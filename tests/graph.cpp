@@ -75,6 +75,5 @@ TEST_CASE("input_and_output")
 TEST_CASE("exception")
 {
     REQUIRE_THROWS_AS(Graph graph_1({ { 1, 2, 60 }, { 0, 2, 3 }, { 0, 1 }, { 1, 4 }, { 3, 5 },
-        { 4, 6 }, { 0, 5 } });
-                      , std::length_error);
+        { 4, 6 }, { 0, 5 } }) , std::length_error);
 }
