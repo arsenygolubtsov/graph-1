@@ -66,14 +66,15 @@ TEST_CASE("input_and_output")
                   "4:3 5 \n"
                   "5:4 6 \n"
                   "6:0 5 \n" };
+    istringstream in(input);
     graph.read(input);
     ostringstream stream;
     graph.print_graph(stream);
-    REQUIRE(out == stream.str());
+    REQUIRE(input == stream.str());
 }
 
 TEST_CASE("exception")
 {
-    REQUIRE_THROWS_AS(Graph graph_1({ { 1, 2, 60 }, { 0, 2, 3 }, { 0, 1 }, { 1, 4 }, { 3, 5 },
+    REQUIRE_THROWS_AS(Graph graph({ { 1, 2, 60 }, { 0, 2, 3 }, { 0, 1 }, { 1, 4 }, { 3, 5 },
         { 4, 6 }, { 0, 5 } }) , std::length_error);
 }
