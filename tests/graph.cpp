@@ -66,8 +66,8 @@ TEST_CASE("input_and_output")
                   "4:3 5 \n"
                   "5:4 6 \n"
                   "6:0 5 \n" };
-    istringstream in(in);
-    graph.read(input);
+    istringstream in(input);
+    graph.read(in);
     ostringstream stream;
     graph.print_graph(stream);
     REQUIRE(input == stream.str());
