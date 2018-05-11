@@ -24,7 +24,7 @@ public:
         N = 0;
     }
 
-    Graph(const  vector<vector<unsigned>>& input)
+    Graph(vector<vector<unsigned>>const & input)
     {
         for (unsigned int i = 0; i < input.size(); ++i)
         {
@@ -61,7 +61,7 @@ public:
         }
     }
 
-    Graph(const Graph& other)
+    Graph(Graph const & other)
     {
         N = other.N;
         graph = other.graph;
@@ -69,7 +69,7 @@ public:
             result = other.result;
     }
 
-    Graph operator=(const Graph& other)
+    Graph operator=(Graph const & other)
     {
         if (this != &other)
         {
