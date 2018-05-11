@@ -28,9 +28,9 @@ public:
     {
         for (unsigned int i = 0; i < input.size(); ++i)
         {
-            for (const auto& j : input[i])
+            for (unsigned j : input[i])
             {
-                if (j >= input.size())
+                if ((input[i])[j] >= input.size())
                     throw length_error("fail");
             }
         }
