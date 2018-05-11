@@ -103,13 +103,13 @@ public:
         }
     }
 
-    void print_result(ostream& stream)
+    void print_result(ostream& stream) const
     {
         for (unsigned i : result)
             stream << "->" << i;
     }
 
-    void print_graph(ostream& stream)
+    void print_graph(ostream& stream) const
     {
         for (unsigned i = 0; i < N; i++)
         {
