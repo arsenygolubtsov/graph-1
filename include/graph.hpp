@@ -24,7 +24,7 @@ public:
         N = 0;
     }
 
-    Graph(vector<vector<unsigned> > input)
+    Graph(vector<vector<unsigned>>& input)
     {
         for (unsigned int i = 0; i < input.size(); ++i)
         {
@@ -61,7 +61,7 @@ public:
         }
     }
 
-    Graph(Graph& other)
+    Graph(Graph const& other)
     {
         N = other.N;
         graph = other.graph;
@@ -69,7 +69,7 @@ public:
             result = other.result;
     }
 
-    Graph operator=(Graph& other)
+    Graph operator=(Graph const& other)
     {
         if (this != &other)
         {
@@ -92,13 +92,13 @@ public:
         dfs_help(index, &run_);
     }
 
-    void dfs_help(unsigned index, vector<bool>* run_)
+    void dfs_help(unsigned index, vector<bool>& run_)
     {
         (*run_)[index] = true;
         result.push_back(index);
         for (const auto& i : graph[index])
         {
-            if (!(*run_)[i])
+            if (!(run_)[i])
                 dfs_help(i, run_);
         }
     }
